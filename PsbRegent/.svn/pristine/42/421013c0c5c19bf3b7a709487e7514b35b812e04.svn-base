@@ -1,0 +1,61 @@
+package com.bcj.psbregent.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.bcj.psbregent.model.Login;
+
+import utilities.dbproperties.DbUtil;
+import utilities.dbpropertieshardcode.DbHardCode;
+
+/**This class is used to connect to the database and perform some search,update operations and returns the result back to
+ * the Service layer
+ * @author Bootcamp User 021
+ *
+ */
+public class LoginDao {
+	
+	
+	public static Connection dbConnection;
+	public String dbconnectionType = "properties";
+
+	public static void setDbConnectionType(String dbconnectionType) {
+
+		if (dbconnectionType.equals("properties"))
+
+			dbConnection = DbUtil.getConnection();
+		else
+			dbConnection = DbHardCode.getConnection();
+
+	}
+
+	public static boolean authenticateUser(Login loginDetails) {
+
+		try {
+			LoginDao.setDbConnectionType("properties");
+			String query1 = "select Password from login where UserId=?";
+
+			PreparedStatement stmt1 = dbConnection.prepareStatement(query1);
+			stmt1.setString(1, loginDetails.getUserId());
+
+			ResultSet rs = stmt1.executeQuery();
+
+			if (rs.next())
+				if (loginDetails.getPassword().equals(rs.getString("Password")))
+					return true;
+			
+			
+			return false;
+			
+		}
+
+		catch (Exception e) {
+			
+			System.out.println(e);
+			return false;
+			
+		}
+	}
+
+}

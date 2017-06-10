@@ -1,0 +1,40 @@
+package com.bcj.psbregent.dao;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+import com.bcj.psbregent.model.CreditCard;
+
+/**This class is used to connect to the database and perform some search,update operations and returns the result back to
+ * the Service layer
+ * @author Bootcamp User 021
+ *
+ */
+public class CreditCardDao {
+
+	public static int processPayment(CreditCard creditCardDetails) {
+		try {
+			String file = "C:\\BCJ2016\\Workspace\\CoreJava\\PsbRegent\\src\\utilities\\creditCardDetails.txt";
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferReader = new BufferedReader(fileReader);
+			String line;
+			while ((line = bufferReader.readLine()) != null) {
+				String feilds[] = line.split(" ");
+				for (int i = 0; i < feilds.length; i++) {
+					if (creditCardDetails.getNameOnCard().equals(feilds[0])
+							&& creditCardDetails.getCardNumber().equals(feilds[1])
+							&& creditCardDetails.getCvv().equals(feilds[2])
+							&& creditCardDetails.getExpirationDate().equals(feilds[3])
+							&& Integer.parseInt(creditCardDetails.getRentAmount()) <= Integer.parseInt(feilds[4])) {
+						return 1;
+					}
+				}
+
+			}
+			return 0;
+		} catch (Exception e) {
+			System.out.println(e);
+			return 0;
+		}
+	}
+}

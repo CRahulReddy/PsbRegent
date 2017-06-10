@@ -1,0 +1,49 @@
+package utilities.dbproperties;
+
+import java.sql.Connection;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class DbUtil {
+	private static Connection dbConnection = null;
+
+	public static Connection getConnection() {
+		if (dbConnection != null) {
+			return dbConnection;
+		} else {
+			try {
+				
+				
+				Context initContext = new InitialContext();
+				DataSource ds = (DataSource)initContext.lookup("mydb");
+				dbConnection = ds.getConnection();
+				
+				
+				/*InputStream inputStream = new FileInputStream(
+						"C:\\BCJ2016\\Workspace\\CoreJava\\PsbRegent\\src\\utilities\\dbproperties\\db.properties");
+				Properties properties = new Properties();
+
+			
+					properties.load(inputStream);
+
+					String dbDriver = properties.getProperty("dbDriver");
+					String connectionUrl = properties.getProperty("connectionUrl");
+					String userName = properties.getProperty("userName");
+					String password = properties.getProperty("password");
+
+					Class.forName(dbDriver).newInstance();
+					dbConnection = DriverManager.getConnection(connectionUrl, userName, password);
+				
+				*/
+				
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return dbConnection;
+		}
+	}
+}

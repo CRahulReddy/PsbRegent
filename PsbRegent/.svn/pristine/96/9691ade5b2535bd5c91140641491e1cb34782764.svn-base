@@ -1,0 +1,117 @@
+<html>
+<head>
+</head>
+<body>
+	<form action="RegistrationServlet" method="POST">
+
+		<div>
+			<h1>Company Details:</h1>
+
+			<table>
+				<tr>
+					<td>CompanyName:</td>
+					<td><input type="text" name="companyName"></td>
+				</tr>
+				<tr>
+					<td>CompanyEmail:</td>
+					<td><input type="text" name="companyEmail"></td>
+				</tr>
+				<tr>
+					<td>CompanyPhone:</td>
+					<td><input type="text" name="CompanyPhone"></td>
+				</tr>
+
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addressLine1"></td>
+				</tr>
+				<tr>
+					<td>AddressLine2:</td>
+					<td><input type="text" name="addressLine2"></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" name="city"></td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td><input type="text" name="state"></td>
+				</tr>
+				<tr>
+					<td>Zip:</td>
+					<td><input type="text" name="zip"></td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div>
+			<h1>Contact Details:</h1>
+			<table>
+
+				<tr>
+					<td>FirstName:</td>
+					<td><input type="text" name="firstName"></td>
+				</tr>
+				<tr>
+					<td>LastName:</td>
+					<td><input type="text" name="lastName"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input type="text" name="phone"></td>
+				</tr>
+
+
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addLine1"></td>
+				</tr>
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addLine2"></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" name="concity"></td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td><input type="text" name="constate"></td>
+				</tr>
+				<tr>
+					<td>Zip:</td>
+					<td><input type="text" name="conzip"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div>
+			<h1>Account Credentials:</h1>
+			<table>
+				<tr>
+					<td>Userid:</td>
+					<td><input type="text" name="userId"></td>
+				</tr>
+
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Regiter"></td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+
+
+
+</body>
+</html>

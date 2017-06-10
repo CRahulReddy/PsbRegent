@@ -1,0 +1,45 @@
+package com.bcj.psbregent.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.bcj.psbregent.model.CreditCard;
+import com.bcj.psbregent.service.CreditCardService;
+
+/**This is the payment servlet which is used to to forward the credit card detials entered by the user to the service layer and prints 
+ * whether the payment is successfull or not based on the reponse from the service layer
+ * @author Bootcamp User 021
+ *
+ */
+public class PaymentServlet extends HttpServlet {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+
+		CreditCard creditCardDetails = new CreditCard(request.getParameter("nameOnCard"),
+				request.getParameter("cardNumber"), request.getParameter("cvv"), request.getParameter("expirationDate"),
+				request.getParameter("rentAmount"));
+
+		int status = CreditCardService.processPayment(creditCardDetails);
+
+		out.println("<html><body>");
+		if (status > 0) {
+			out.println("<h2> Payment successfull</h2>");
+		} else {
+			out.println("<h2> Payment failed</h2>");
+		}
+
+		out.println("</body></html>");
+		System.out.println(request.getParameter("nameOnCard"));
+
+	}
+
+}

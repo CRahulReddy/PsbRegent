@@ -1,0 +1,18 @@
+package com.bcj.psbregent.service;
+
+import com.bcj.psbregent.dao.CreditCardDao;
+import com.bcj.psbregent.model.CreditCard;
+
+/**This class is used to pass the entity object to DAO layer and gives the response got from DAO layer back to Servlet
+ * @author Bootcamp User 021
+ *
+ */
+public class CreditCardService {
+
+	public static int processPayment(CreditCard creditCardDetails) {
+
+		return CreditCardDao.processPayment(creditCardDetails);
+
+	}
+
+}

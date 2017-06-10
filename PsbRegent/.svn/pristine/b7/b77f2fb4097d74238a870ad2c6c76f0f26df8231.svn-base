@@ -1,0 +1,63 @@
+package com.bcj.psbregent.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.bcj.psbregent.model.Login;
+import com.bcj.psbregent.service.LoginService;
+
+/**
+ * This is the login servlet which passes the user login details to the service layer for authentication purpose.
+ */
+
+public class LoginServlet extends HttpServlet {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		Login loginDetails = new Login(request.getParameter("userid"), request.getParameter("password"));
+
+		out.println("<!DOCTYPE html>");
+		out.println("<html><body>");
+
+		if (LoginService.authenticateUser(loginDetails)) {
+
+			//out.println("<h1>succesfuuly login</h1>");
+
+			out.println("<form action=\"PaymentServlet\" method=\"POST\">");
+			out.println("<h2>Enter the Credit Card Details:</h2>");
+
+			out.println("<table><tr><td>NameOnCard:</td><td><input type=\"text\" name=\"nameOnCard\"></td></tr>");
+
+			out.println("<tr><td>Card Number:</td><td><input type=\"text\" name=\"cardNumber\"></td></tr>");
+
+			out.println("<tr><td>CVV:</td><td><input type=\"text\" name=\"cvv\"></td></tr>");
+
+			out.println("<tr><td>ExpiratinDate:</td><td><input type=\"text\" name=\"expirationDate\"></td></tr>");
+
+			out.println("<tr><td>RentAmount:</td><td><input type=\"text\" name=\"rentAmount\"></td></tr>");
+
+			out.println("<tr><td></td><td><input type=\"submit\" value=\"Submit\"></td></tr></table></form>");
+
+		} else {
+
+			out.println("<h1>Login failed</h1>");
+		}
+		
+		out.println("</body></html>");
+	}
+
+}

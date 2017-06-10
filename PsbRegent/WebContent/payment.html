@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+body {
+	background-image:
+		url("http://www.anawalls.com/repic/image.php?src=http://www.anawalls.com/images/abstract/abstraction-pink-red-stripes-white.jpg&h=540&w=960");
+	/* <------ */
+	background-repeat: no-repeat;
+	//background-position: center; /* optional, center the image */
+	
+	background-size: cover;
+}
+table{
+color: #FFFFFF;
+
+}
+h2{
+color: #FFFFFF;
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+	<h2 align="right"><a  href=\"login.html\" >Logout</a></h2>
+	<div style="padding-top:40px">
+
+	<form action="PaymentServlet" method="POST">
+		<h2 align="center">Enter the Credit Card Details</h2>
+
+		<table align="center">
+			<tr>
+				<td>NameOnCard:</td>
+				<td><input type="text" name="nameOnCard"></td>
+			</tr>
+
+			<tr>
+				<td>Card Number:</td>
+				<td><input type="text" name="cardNumber"></td>
+			</tr>
+
+			<tr>
+				<td>CVV:</td>
+				<td><input type="text" name="cvv"></td>
+			</tr>
+
+			<tr>
+				<td>ExpiratinDate:</td>
+				<td><input type="text" name="expirationDate"></td>
+			</tr>
+
+			<tr>
+				<td>RentAmount:</td>
+				<td><input type="text" name="rentAmount"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit"></td>
+			</tr>
+		</table>
+	</form></div>
+</body>
+</html>

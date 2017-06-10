@@ -1,0 +1,174 @@
+<html>
+<head>
+
+<style>
+body { //
+	background-image:
+		url("http://www.anawalls.com/repic/image.php?src=http://www.anawalls.com/images/abstract/abstraction-pink-red-stripes-white.jpg&h=540&w=960");
+	/* <------ */
+	background-repeat: no-repeat; //
+	background-position: center; /* optional, center the image */
+	background-height:;
+}
+
+.details {
+	padding-left: 40%; //
+	padding-top: 10px;
+	position: absolute;
+	align: center;
+}
+
+/* .textcolor {
+	color: #FFFFFF;
+	
+}
+
+ input[type=text] {
+   
+   
+//background: transparent;
+border-color:#F9933F;
+
+}
+ input[type=password] {
+   
+   //background: transparent;
+   border-color:#F9933F;
+    
+   
+}
+ input[type=submit] {
+   
+  // background: transparent;
+   border-color:blue;
+    
+  
+}
+.tr{
+padding-left:20px;
+} */
+</style>
+
+
+
+
+</head>
+<body>
+	<div style="padding-top: 20px;">
+		<h1 align="center">Please enter the following details</h1>
+	</div>
+
+	<div class="details">
+		<form action="RegistrationServlet" method="POST">
+
+
+
+			<h1>Company Details</h1>
+
+			<table>
+			
+				<tr>
+					<td>CompanyName:</td>
+					<td><input type="text" name="companyName"></td>
+				</tr>
+				<tr>
+					<td>CompanyEmail:</td>
+					<td><input type="text" name="companyEmail"></td>
+				</tr>
+				<tr>
+					<td>CompanyPhone:</td>
+					<td><input type="text" name="CompanyPhone"></td>
+				</tr>
+
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addressLine1"></td>
+				</tr>
+				<tr>
+					<td>AddressLine2:</td>
+					<td><input type="text" name="addressLine2"></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" name="city"></td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td><input type="text" name="state"></td>
+				</tr>
+				<tr>
+					<td>Zip:</td>
+					<td><input type="text" name="zip"></td>
+				</tr>
+			</table>
+
+
+
+
+			<h1>Contact Details</h1>
+			<table>
+
+				<tr>
+					<td>FirstName:</td>
+					<td><input type="text" name="firstName"></td>
+				</tr>
+				<tr>
+					<td>LastName:</td>
+					<td><input type="text" name="lastName"></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input type="text" name="phone"></td>
+				</tr>
+
+
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addLine1"></td>
+				</tr>
+				<tr>
+					<td>AddressLine1:</td>
+					<td><input type="text" name="addLine2"></td>
+				</tr>
+				<tr>
+					<td>City:</td>
+					<td><input type="text" name="concity"></td>
+				</tr>
+				<tr>
+					<td>State:</td>
+					<td><input type="text" name="constate"></td>
+				</tr>
+				<tr>
+					<td>Zip:</td>
+					<td><input type="text" name="conzip"></td>
+				</tr>
+			</table>
+
+			<h1>Account Credentials</h1>
+			<table>
+				<tr>
+					<td>Userid:</td>
+					<td><input type="text" name="userId"></td>
+				</tr>
+
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Regiter"></td>
+				</tr>
+			</table>
+
+
+		</form>
+	</div>
+
+
+</body>
+</html>

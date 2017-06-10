@@ -1,0 +1,27 @@
+<html>
+
+
+<body>
+
+	<form action="LoginServlet" method="POST">
+		<table>
+			<tr>
+				<td>UserId:</td>
+				<td><input type="text" name="userid"></td>
+			</tr>
+
+			<tr>
+				<td>password:</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="submit" value="login"></td>
+			</tr>
+
+		</table>
+	</form>
+
+</body>
+</html>
